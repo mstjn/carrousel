@@ -51,14 +51,18 @@ function updateSlide(index) {
 
 // Navigation flèche gauche
 arrow_left.addEventListener("click", () => {
-  const newIndex = (current_dot - 1 + slides.length) % slides.length;
-  updateSlide(newIndex);
+ let newIndex;
+if (current_dot === 0) {newIndex = 3} 
+else {newIndex = current_dot - 1}
+  updateSlide(newIndex)
 });
 
 // Navigation flèche droite
 arrow_right.addEventListener("click", () => {
-  const newIndex = (current_dot + 1) % slides.length;
-  updateSlide(newIndex);
+let newIndex;
+if (current_dot === 3) {newIndex = 0} 
+else {newIndex = current_dot + 1}
+  updateSlide(newIndex)
 });
 
 // Initialisation
